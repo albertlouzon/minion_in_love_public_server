@@ -1,6 +1,9 @@
-from bottle import route, run, get, static_file, response, request
-import bottle as b
+import os
+from os import environ as env
+from sys import argv
 
+import bottle as b
+from bottle import default_app, request, route, response, get
 
 @route('/')
 def index():
@@ -25,8 +28,8 @@ def javascript(filename):
     return b.static_file(filename, root='sounds')
 
 def main():
-    run(host='localhost', port=7000)
-
+     bottle.run(host='0.0.0.0', port=argv[1])
+p
 
 if __name__ == '__main__':
     main()
