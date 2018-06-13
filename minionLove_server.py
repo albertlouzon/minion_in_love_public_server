@@ -3,7 +3,7 @@ from os import environ as env
 from sys import argv
 
 import bottle as b
-from bottle import default_app, request, route, response, get
+from bottle import route, get
 
 @route('/')
 def index():
@@ -28,8 +28,8 @@ def javascript(filename):
     return b.static_file(filename, root='sounds')
 
 def main():
-     bottle.run(host='0.0.0.0', port=argv[1])
-p
+     b.run(host='0.0.0.0', port=argv[1])
+
 
 if __name__ == '__main__':
     main()
